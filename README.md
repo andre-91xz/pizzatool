@@ -2,6 +2,12 @@
 
 
 
+![image](https://github.com/andre-91xz/pizzatool/blob/b0896b66500b7e3f16f9a2cee092ec39fa2f6e61/images/img1.png)
+![image](https://github.com/andre-91xz/pizzatool/blob/b0896b66500b7e3f16f9a2cee092ec39fa2f6e61/images/img2.png)
+![image](https://github.com/andre-91xz/pizzatool/blob/b0896b66500b7e3f16f9a2cee092ec39fa2f6e61/images/img3.png)
+![image](https://github.com/andre-91xz/pizzatool/blob/b0896b66500b7e3f16f9a2cee092ec39fa2f6e61/images/img4.png)
+![image](https://github.com/andre-91xz/pizzatool/blob/b0896b66500b7e3f16f9a2cee092ec39fa2f6e61/images/img6.png)
+
 
 
 
