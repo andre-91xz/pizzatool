@@ -41,6 +41,7 @@ O projeto é dividido em quatro módulos principais:
 
 ### 1. Banco de Dados (API Principal)
 - Certifique-se de ter o **PostgreSQL** instalado.
+- Certifique-se de ter o **Node JS** instalado.
 - Execute o script contido em `API/banco_app.sql` para criar as tabelas necessárias.
 - Configure o arquivo `.env` na pasta `API/` (use o `.env.example` como base).
 
