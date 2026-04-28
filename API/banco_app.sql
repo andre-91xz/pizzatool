@@ -258,7 +258,7 @@ CREATE INDEX idx_fin_tipo ON public.financeiro USING btree (tipo);
 
 INSERT INTO public.ia_profiles (provider,"name",model,api_key,is_active) VALUES
 	 ('gemini','Google Gemini','gemini-2.5-flash','sk-chave',false),
-	 ('openai','OpenAI GPT-4','gpt-4-turbo','sk-cha',true),
+	 ('openai','OpenAI','gpt-4-turbo','sk-cha',true),
 	 ('openrouter','OpenRouter AI','tencent/hy3-preview:free','sk',false);
 
 
