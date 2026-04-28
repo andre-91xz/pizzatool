@@ -1,0 +1,170 @@
+/* ===================================================
+   DESIGN SYSTEM GLOBAL v3 — Premium Obsidian & Gold
+   Tipografia: Playfair Display + Sora
+   =================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Sora:wght@300;400;500;600;700&display=swap');
+
+/* ─── TEMA CLARO (Editorial High Contrast) ─── */
+:root {
+  --bg: #F9F7F2;
+  /* Branco Papel Arroz */
+  --surface: #FFFFFF;
+  --chatsurface: #6e6c6c;
+  --surface-2: #F0EAD6;
+  /* Creme Pergaminho */
+  --border: #D1C7B7;
+  --border-soft: #E8E2D6;
+  --text-primary: #1A1612;
+  --text-motoboy: #ccc1b7;
+  /* Preto Bistrô */
+  --text-secondary: #3D342C;
+  --text-muted: #6B5E4F;
+  --text-fog: #A39684;
+  --gold: #B88618;
+  /* Ouro Antigo (Mais escuro para contraste) */
+  --gold-light: #D99E1D;
+  --gold-hover: #8C6612;
+  --coal: #1A1612;
+  --success: #1E4D2B;
+  /* Verde Floresta */
+  --success-bg: #E8F5E9;
+  --danger: #9B1C1C;
+  /* Vermelho Sangue */
+  --danger-bg: #FEE2E2;
+  --info: #0E4B6E;
+  --info-bg: #E1EFFE;
+  --warn: #7E4F12;
+  --warn-bg: #FEF3C7;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Sora', 'Segoe UI', sans-serif;
+  --shadow-xs: 0 1px 3px rgba(26, 22, 18, 0.1);
+  --shadow-sm: 0 4px 12px rgba(26, 22, 18, 0.12);
+  --shadow-md: 0 8px 24px rgba(26, 22, 18, 0.15);
+  --shadow-lg: 0 20px 48px rgba(26, 22, 18, 0.18);
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 20px;
+}
+
+/* ─── TEMA ESCURO (Obsidian Gold Luxe) ─── */
+[data-theme="dark"] {
+  --bg: #0A0908;
+  /* Obsidiana Profunda */
+  --surface: #161412;
+  --chatsurface: #6e6c6c;
+  /* Basalto */
+  --surface-2: #1F1C18;
+  /* Madeira Queimada */
+  --border: #332D28;
+  --border-soft: #26221E;
+  --text-primary: #F2F2F2;
+  --text-motoboy: #F2F2F2;
+  /* Branco Pérola (Máximo Contraste) */
+  --text-secondary: #D9D2C5;
+  /* Creme Sedoso */
+  --text-muted: #A69D8F;
+  /* Bronze Opaco */
+  --text-fog: #5C544A;
+  --gold: #D99E1D;
+  /* Ouro Real */
+  --gold-light: #F2C94C;
+  --gold-hover: #FFD700;
+  --coal: #F9F7F2;
+  --success: #2ECC71;
+  /* Esmeralda */
+  --success-bg: rgba(46, 204, 113, 0.15);
+  --danger: #EF4444;
+  /* Rubi */
+  --danger-bg: rgba(239, 68, 68, 0.15);
+  --info: #3B82F6;
+  /* Safira */
+  --info-bg: rgba(59, 130, 246, 0.15);
+  --warn: #F59E0B;
+  --warn-bg: rgba(245, 158, 11, 0.15);
+  --shadow-xs: 0 2px 4px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.8);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text-primary);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1), color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* ─── Layout raiz ─── */
+.App {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.Sidebar {
+  flex: 0 0 auto;
+}
+
+.header {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg);
+}
+
+.renderpage {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+  background: var(--bg);
+  padding: 0;
+  /* Removi o padding daqui para dar controle total às páginas */
+}
+
+/* Utilitários globais de contraste */
+h1,
+h2,
+h3,
+h4 {
+  color: var(--gold);
+  font-family: var(--font-display);
+}
+
+strong {
+  color: var(--text-primary);
+  font-weight: 700;
+}

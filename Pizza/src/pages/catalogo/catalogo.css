@@ -1,0 +1,708 @@
+/* ═══════════════════════════════════════════════════
+   CATÁLOGO — Editorial / Receituário
+═══════════════════════════════════════════════════ */
+
+.catalogo-principal {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  column-gap: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  box-sizing: border-box;
+}
+
+/* Lista (esquerda) */
+.catalogo-lista {
+  background: var(--bg);
+  padding: 32px 28px;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Cadastro (direita) */
+.catalogo-cadastro {
+  background: var(--surface);
+  padding: 32px 24px;
+  height: 100vh;
+  overflow-y: auto;
+  border-left: 1px solid var(--border);
+}
+
+.titulo-cat {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  letter-spacing: -0.3px;
+}
+
+/* Form */
+.form-cat {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.label-cat {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.input-cat {
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  width: 100%;
+}
+
+.input-cat:focus {
+  border-color: var(--gold);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(206, 173, 90, 0.18);
+}
+
+.input-cat::placeholder {
+  color: var(--text-fog);
+}
+
+.btn-cat-add {
+  margin-top: 10px;
+  background: var(--gold);
+  color: var(--coal);
+  border: none;
+  border-radius: 8px;
+  padding: 13px 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-cat-add:hover {
+  background: var(--gold-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Modal */
+.ent-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.ent-modal {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 28px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: var(--shadow-lg);
+}
+
+.ent-modal h3 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  margin: 0 0 10px;
+}
+
+.ent-modal p {
+  color: var(--text-secondary);
+  font-size: 13px;
+  margin: 0 0 20px;
+}
+
+.ent-modal-btns {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-ent-cancelar {
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  transition: all 0.18s;
+}
+
+.btn-ent-confirmar {
+  background: var(--danger);
+  border: none;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.18s;
+}
+
+.btn-ent-confirmar:hover {
+  opacity: 0.85;
+}
+
+/* Cards de pizza */
+.pizza-card {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  position: relative;
+}
+
+.pizza-card:hover {
+  border-left-color: var(--gold-hover);
+  box-shadow: var(--shadow-sm);
+}
+
+.pizza-icon-wrapper {
+  background: var(--gold);
+  color: var(--coal);
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.pizza-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.pizza-acoes-card {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn-acao-card {
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.18s;
+}
+
+.btn-editar {
+  color: var(--info);
+}
+
+.btn-editar:hover {
+  background: var(--info-bg);
+}
+
+.btn-excluir {
+  color: var(--danger);
+}
+
+.btn-excluir:hover {
+  background: var(--danger-bg);
+}
+
+.pizza-nome {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.pizza-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+
+.pizza-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.pizza-stat-badge {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 99px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Scrollbar */
+.catalogo-lista::-webkit-scrollbar,
+.catalogo-cadastro::-webkit-scrollbar {
+  width: 3px;
+}
+
+.catalogo-lista::-webkit-scrollbar-thumb,
+.catalogo-cadastro::-webkit-scrollbar-thumb {
+  background: var(--text-fog);
+  border-radius: 99px;
+}
+
+@media (max-width: 900px) {
+  .catalogo-principal {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+}
+
+/* Painel de custo (mudei para classe) */
+.painel-custo-cat {
+  margin-top: 30px;
+  padding: 18px;
+  background: var(--surface-2);
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.painel-custo-label {
+  color: var(--text-muted);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.painel-custo-valor {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.painel-custo-valor.custo {
+  color: var(--danger);
+}
+
+.painel-custo-valor.venda {
+  color: var(--success);
+}
+
+/* Tabs */
+.tabs-container {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px 6px 0 0;
+  transition: all 0.18s;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.tab-btn:hover {
+  color: var(--text-secondary);
+}
+
+.tab-btn.ativo {
+  color: var(--text-primary);
+  font-weight: 700;
+  border-bottom-color: var(--gold);
+  background: transparent;
+}
+
+.tab-content {
+  min-height: 220px;
+}
+
+.ingredientes-tab {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn-cat-add-outline {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 0;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-cat-add-outline:hover {
+  background: var(--success-bg);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.ingredientes-selecionados-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.empty-ingredientes {
+  color: var(--text-fog);
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+  padding: 16px 0;
+}
+
+.ingrediente-item-selecionado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 9px 12px;
+}
+
+.ing-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ing-nome {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ing-qtd {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.ing-btn-remover,
+.ing-btn-editar {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 0.18s;
+}
+
+.ing-btn-remover {
+  color: var(--danger);
+}
+
+.ing-btn-remover:hover {
+  color: var(--gold-hover);
+}
+
+.ing-btn-editar {
+  color: var(--info);
+}
+
+.ing-btn-editar:hover {
+  color: var(--gold-hover);
+}
+
+/* Predefinições carrossel — FIXO MAIS ABAIXO */
+.predefinicoes-footer-container {
+  position: sticky;
+  bottom: -32px;
+  /* Compensa o padding da lista */
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  padding: 16px 28px;
+  margin: 20px -28px -32px;
+  border-top: 1px solid var(--border);
+  z-index: 10;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.pred-divisor {
+  display: none;
+}
+
+/* Removido pois usamos border-top */
+
+.carrossel-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-scroll {
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  color: var(--text-muted);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.18s;
+  flex-shrink: 0;
+}
+
+.btn-scroll:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--coal);
+}
+
+.carrossel-predefinicoes {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 4px 2px;
+  scrollbar-width: none;
+  flex: 1;
+}
+
+.carrossel-predefinicoes::-webkit-scrollbar {
+  display: none;
+}
+
+.pred-pill {
+  position: relative;
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: 99px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 140px;
+  height: 40px;
+  flex-shrink: 0;
+  transition: transform 0.18s, border-color 0.18s, background 0.18s;
+}
+
+.pred-pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  background: var(--surface);
+}
+
+.pred-pill-nome {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: opacity 0.18s;
+}
+
+.pred-pill-acoes {
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.pred-pill:hover .pred-pill-nome {
+  opacity: 0;
+}
+
+.pred-pill:hover .pred-pill-acoes {
+  opacity: 1;
+}
+
+.btn-pill-acao {
+  background: transparent;
+  border: none;
+  color: var(--coal);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Modal catálogo */
+.modal-cat-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 120;
+}
+
+.modal-cat-card {
+  width: min(420px, 92vw);
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal-cat-card h3 {
+  margin: 0 0 8px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+.modal-cat-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.btn-cat-secundario,
+.btn-cat-primario {
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s;
+  border: 1.5px solid transparent;
+}
+
+.btn-cat-secundario {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+.btn-cat-secundario:hover {
+  background: var(--bg);
+  color: var(--text-primary);
+}
+
+.btn-cat-primario {
+  background: var(--gold);
+  color: var(--coal);
+}
+
+.btn-cat-primario:hover {
+  background: var(--gold-hover);
+  box-shadow: var(--shadow-md);
+}
+
+/* Slots */
+.slots-massas-cat {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.slot-btn-cat {
+  border: 1.5px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border-radius: 99px;
+  padding: 7px 16px;
+  font-size: 12px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.slot-btn-cat:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+.slot-btn-cat.ativo {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--coal);
+  font-weight: 700;
+}

@@ -1,0 +1,292 @@
+/* ═══════════════════════════════════════════════════
+   SIDEBAR v2 — Tema Dinâmico (Claro + Escuro)
+═══════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Sora:wght@400;500;600&display=swap');
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 220px;
+  background: var(--surface-2);
+  border-right: 1px solid var(--border);
+  overflow: hidden;
+  transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s, border-color 0.3s;
+  flex-shrink: 0;
+  position: relative;
+}
+
+[data-theme="dark"] .sidebar {
+  background: #1A1610;
+  border-right-color: #2C2618;
+}
+
+.sidebar.collapsed {
+  width: 60px;
+}
+
+/* Grain texture sutil */
+.sidebar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
+}
+
+.sidebar>* {
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── Header ─── */
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 14px;
+  border-bottom: 1px solid var(--border-soft);
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .sidebar-header {
+  border-bottom-color: #2C2618;
+}
+
+.sidebar.collapsed .sidebar-header {
+  justify-content: center;
+  padding: 16px 0;
+}
+
+.logo-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--gold);
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 6px;
+  transition: color 0.18s, background 0.18s;
+  flex-shrink: 0;
+}
+
+.toggle-btn:hover {
+  color: var(--gold);
+  background: rgba(206, 173, 90, 0.08);
+}
+
+/* ─── Nav links ─── */
+.nav-links {
+  list-style: none;
+  padding: 8px 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  cursor: pointer;
+  color: var(--text-muted);
+  border-left: 2px solid transparent;
+  transition: all 0.18s;
+  user-select: none;
+  gap: 12px;
+  border-radius: 0;
+  margin: 1px 0;
+}
+
+.sidebar.collapsed .nav-item {
+  justify-content: center;
+  padding: 10px 0;
+  gap: 0;
+  border-left: none;
+}
+
+.nav-item:hover {
+  color: var(--gold);
+  background: rgba(206, 173, 90, 0.06);
+  border-left-color: rgba(206, 173, 90, 0.3);
+}
+
+.sidebar.collapsed .nav-item:hover {
+  background: rgba(206, 173, 90, 0.06);
+  border-left: none;
+}
+
+.nav-item.active {
+  color: var(--gold);
+  background: rgba(206, 173, 90, 0.1);
+  border-left-color: var(--gold);
+}
+
+.sidebar.collapsed .nav-item.active {
+  border-left: none;
+  background: rgba(206, 173, 90, 0.12);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+}
+
+.link-text {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* ─── Clock Display ─── */
+.sidebar-clock {
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid var(--border-soft);
+  transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] .sidebar-clock {
+  border-top-color: #2C2618;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.sidebar.collapsed .sidebar-clock {
+  padding: 16px 0;
+  background: transparent;
+  border-top-color: transparent;
+}
+
+.clock-day {
+  font-family: 'Sora', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.clock-time {
+  font-family: 'Sora', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.clock-collapsed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.clock-collapsed span:last-child {
+  color: var(--gold);
+}
+
+/* ─── Footer (tema toggle) ─── */
+.sidebar-footer {
+  border-top: 1px solid var(--border-soft);
+  padding: 10px;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .sidebar-footer {
+  border-top-color: #2C2618;
+}
+
+.theme-toggle-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border-soft);
+  color: var(--text-muted);
+  border-radius: 8px;
+  padding: 7px 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  transition: all 0.18s;
+  justify-content: flex-start;
+}
+
+.sidebar.collapsed .theme-toggle-btn {
+  justify-content: center;
+  padding: 7px 0;
+  gap: 0;
+}
+
+.theme-toggle-btn:hover {
+  color: var(--gold);
+  border-color: rgba(206, 173, 90, 0.3);
+  background: rgba(206, 173, 90, 0.06);
+}
+
+/* ─── Tooltip (collapsed) ─── */
+.sidebar-tooltip {
+  position: fixed;
+  left: 50%;
+  top: 90%;
+  transform: translateY(-50%);
+  background: var(--surface-2);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 9px 18px;
+  border-radius: 8px;
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  white-space: nowrap;
+  z-index: 9999;
+  pointer-events: none;
+  box-shadow: var(--shadow-md);
+  animation: tipFade 0.15s ease;
+}
+
+[data-theme="dark"] .sidebar-tooltip {
+  background: #1A1610;
+}
+
+@keyframes tipFade {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) translateX(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(-50%) translateX(0);
+  }
+}

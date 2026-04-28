@@ -1,0 +1,400 @@
+/* ═══════════════════════════════════════════════════
+   BORDAS — Cadastro de Bordas com Ficha Técnica
+═══════════════════════════════════════════════════ */
+
+.bordas-principal {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px 28px;
+  min-height: 100%;
+  background: var(--bg);
+  font-family: var(--font-body);
+  color: var(--text-secondary);
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+/* ─── Formulário ─── */
+.bordas-form-container {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.bordas-titulo {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 22px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: -0.3px;
+}
+
+.bordas-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 700px) {
+  .bordas-form-grid { grid-template-columns: 1fr; }
+}
+
+.bordas-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.bordas-field label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.bordas-field input,
+.bordas-field select {
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.bordas-field input:focus,
+.bordas-field select:focus {
+  border-color: var(--gold);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(206,173,90,0.18);
+}
+
+.bordas-field input::placeholder { color: var(--text-fog); }
+
+/* ─── Ficha técnica ─── */
+.bordas-ficha {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.bordas-subtitulo {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+}
+
+.bordas-hint {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.bordas-add-ing {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.bordas-add-ing select,
+.bordas-add-ing input {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 9px 12px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.bordas-add-ing select:first-child { flex: 1; min-width: 180px; }
+.bordas-add-ing input { width: 90px; }
+.bordas-add-ing select:nth-child(3) { width: 70px; }
+
+.bordas-add-ing select:focus,
+.bordas-add-ing input:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(206,173,90,0.15);
+}
+
+.btn-add-ing {
+  background: var(--gold);
+  color: var(--coal);
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  white-space: nowrap;
+  transition: background 0.18s;
+}
+
+.btn-add-ing:hover { background: var(--gold-hover); }
+
+/* Lista de ingredientes adicionados */
+.bordas-lista-ings {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.bordas-ing-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 7px;
+  padding: 9px 12px;
+}
+
+.ing-mat-nome {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.ing-mat-qtd {
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--surface-2);
+  padding: 2px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--border);
+}
+
+.btn-remover-ing {
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  padding: 4px;
+  opacity: 0.7;
+  transition: opacity 0.18s;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+}
+
+.btn-remover-ing:hover { opacity: 1; }
+
+.bordas-ing-vazio {
+  font-size: 12px;
+  color: var(--text-fog);
+  font-style: italic;
+  text-align: center;
+  padding: 14px 0;
+  margin: 0;
+}
+
+/* ─── Ações ─── */
+.bordas-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.btn-borda-salvar {
+  background: var(--gold);
+  color: var(--coal);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.18s;
+}
+
+.btn-borda-salvar:hover {
+  background: var(--gold-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-borda-cancelar {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 20px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.18s;
+}
+
+.btn-borda-cancelar:hover { background: var(--bg); }
+
+/* ─── Lista de bordas ─── */
+.bordas-lista-container {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.bordas-lista-titulo {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.bordas-vazio {
+  color: var(--text-fog);
+  font-size: 13px;
+  font-style: italic;
+  text-align: center;
+  padding: 32px;
+  margin: 0;
+}
+
+.bordas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+/* Card de borda */
+.borda-card {
+  background: var(--bg);
+  border: 1.5px solid var(--border);
+  border-left: 4px solid var(--gold);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: box-shadow 0.18s, transform 0.18s;
+}
+
+.borda-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.borda-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.borda-card-nome {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.borda-card-valor {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+.borda-card-btns {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.borda-card-btns button {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: all 0.18s;
+}
+
+.borda-card-btns button:hover { background: var(--surface-2); color: var(--text-primary); }
+.borda-card-btns button.btn-del { color: var(--danger); }
+.borda-card-btns button.btn-del:hover { background: var(--danger-bg); border-color: var(--danger); }
+
+/* Ingredientes no card */
+.borda-card-ings { display: flex; flex-direction: column; gap: 7px; }
+
+.borda-card-ings-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.borda-ing-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.ing-tag {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 3px 10px;
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.borda-sem-ings {
+  font-size: 11px;
+  color: var(--text-fog);
+  font-style: italic;
+  margin: 0;
+}

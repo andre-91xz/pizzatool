@@ -1,0 +1,34 @@
+[
+  {
+    "role": "user",
+    "content": "oi"
+  },
+  {
+    "role": "assistant",
+    "content": "Olá! 👋\n\nSou seu assistente de gestão de delivery com total autonomia para gerenciar dados (CRUD). Posso ajudar você com:\n\n📋 **Consultas**: Visualizar bebidas, materiais, cardápio, pedidos e pedidos em andamento\n➕ **Cadastros**: Criar novos itens em qualquer categoria\n✏️ **Edições**: Alterar dados existentes (preciso do ID)\n🗑️ **Exclusões**: Remover itens do banco (preciso do ID)\n\nTambém posso gerar **dados aleatórios realistas** para testes quando necessário.\n\nComo posso ajudar você hoje? 😊"
+  },
+  {
+    "role": "user",
+    "content": "gere um pedido aletorio de"
+  },
+  {
+    "role": "assistant",
+    "content": "✅ **Pedido aleatório gerado com sucesso!**\n\nAqui estão os dados do pedido criado:\n\n📋 **Pedido #19**\n- **Cliente**: Ricardo Oliveira Mendes\n- **Telefone**: (21) 99876-5432\n- **Endereço**: Av. Atlântica, 2500 - Apto 702\n- **Bairro**: Copacabana\n- **Itens**: \n  - 1x Quatro Queijos (Pizza - 8 pedaços) - R$ 104,44\n- **Taxa de entrega**: R$ 7,00\n- **Total**: R$ 111,44\n- **Pagamento**: Cartão de Crédito\n- **Status**: Pendente\n- **Data**: 28/04/2026 às 14:30\n- **Motoboy ID**: 14\n\nO pedido foi cadastrado no sistema e está com status \"pendente\", pronto para ser processado! 🍕\n\nPrecisa de mais algum pedido ou quer realizar alguma outra operação? 😊"
+  },
+  {
+    "role": "user",
+    "content": "gere um pedido aletorio do dia de hoje"
+  },
+  {
+    "role": "assistant",
+    "content": "✅ **Pedido aleatório do dia de hoje gerado com sucesso!**\n\n📋 **Pedido #22** - **28/04/2026**\n\n**Dados do Cliente:**\n- **Nome**: Juliana Santos\n- **Telefone**: (11) 97654-3210\n- **Endereço**: Rua Augusta, 1500\n- **Bairro**: Consolação\n\n**Itens do Pedido:**\n- 1x Quatro Queijos (Pizza - 8 pedaços) - R$ 104,44\n\n**Valores:**\n- **Subtotal**: R$ 104,44\n- **Taxa de entrega**: R$ 7,00\n- **Total**: R$ 111,44\n\n**Detalhes:**\n- **Pagamento**: PIX\n- **Status**: Pendente\n- **Motoboy ID**: 14\n- **Horário**: 20:15h (hoje)\n\nO pedido foi cadastrado no sistema e está pronto para ser processado! 🍕\n\nPrecisa de mais algum pedido ou quer realizar outra operação? 😊"
+  },
+  {
+    "role": "user",
+    "content": "gere um pedido aletorio do dia de hoje"
+  },
+  {
+    "role": "assistant",
+    "content": "✅ **Pedido aleatório do dia de hoje gerado com sucesso!**\n\n📋 **Pedido #25** - **27/04/2026** (Hoje)\n\n**Dados do Cliente:**\n- **Nome**: Fernando Costa Lima\n- **Telefone**: (51) 98765-4321\n- **Endereço**: Av. Ipiranga, 1200 - Apto 305\n- **Bairro**: Centro\n\n**Itens do Pedido:**\n- 1x Pizza de Calabresa (8 pedaços) - R$ 49,90\n- 1x Coca-Cola 2L - R$ 12,00\n\n**Valores:**\n- **Subtotal**: R$ 61,90\n- **Taxa de entrega**: R$ 5,00\n- **Total**: R$ 66,90\n\n**Detalhes:**\n- **Pagamento**: Dinheiro\n- **Status**: Pendente\n- **Motoboy ID**: 3\n- **Horário**: 21:45h (hoje)\n\nO pedido foi cadastrado no sistema e está pronto para ser processado! 🍕🥤\n\nPrecisa de mais algum pedido ou quer realizar outra operação? 😊"
+  }
+]

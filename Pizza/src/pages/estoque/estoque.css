@@ -1,0 +1,47 @@
+.estoque-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--bg);
+}
+
+.estoque-tabs {
+  display: flex;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  flex-shrink: 0;
+  gap: 0;
+}
+
+.estoque-tab {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 13px 16px;
+  cursor: pointer;
+  transition: all 0.18s;
+  white-space: nowrap;
+  margin-bottom: -1px;
+}
+
+.estoque-tab:hover { color: var(--text-primary); }
+
+.estoque-tab.ativo {
+  color: var(--text-primary);
+  border-bottom-color: var(--gold);
+  font-weight: 600;
+}
+
+.estoque-content {
+  flex: 1;
+  min-height: 0;
+  overflow: auto;
+}

@@ -1,0 +1,302 @@
+/* ═══════════════════════════════════════════════════
+   MOTOBOY — Equipe / Operacional
+═══════════════════════════════════════════════════ */
+
+.motoboy-principal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 32px 28px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: #F5F0E6;
+  font-family: 'Sora', sans-serif;
+}
+
+.motoboy-container {
+  background: #FDFBF6;
+  border: 1.5px solid #D8CEB0;
+  border-radius: 16px;
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.titulo-motoboy {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: #1A1610;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 4px;
+  font-size: 22px;
+  font-weight: 700;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #CEAD5A;
+}
+
+.motoboy-form-container {
+  background: #F5F0E6;
+  padding: 18px 20px;
+  border-radius: 10px;
+  border: 1.5px solid #D8CEB0;
+}
+
+.motoboy-form-container h2 {
+  color: #9A8F72;
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.motoboy-form {
+  display: flex;
+  gap: 14px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+  min-width: 140px;
+}
+
+.form-group label {
+  color: #9A8F72;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.form-group input {
+  background: #FDFBF6;
+  border: 1.5px solid #D8CEB0;
+  color: #1A1610;
+  padding: 10px 12px;
+  border-radius: 8px;
+  outline: none;
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #CEAD5A;
+  box-shadow: 0 0 0 3px rgba(206,173,90,0.18);
+}
+
+.btn-cadastrar-motoboy {
+  background: #CEAD5A;
+  color: #1A1610;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  height: 42px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.18s;
+  white-space: nowrap;
+}
+
+.btn-cadastrar-motoboy:hover { background: #B89A3E; box-shadow: 0 4px 14px rgba(206,173,90,0.35); }
+
+.motoboys-lista h2 {
+  font-family: 'Playfair Display', serif;
+  color: #1A1610;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.sem-motoboys { color: #9A8F72; font-size: 13px; font-style: italic; }
+
+.motoboys-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.motoboy-card {
+  background: #F5F0E6;
+  border-radius: 10px;
+  border: 1.5px solid #D8CEB0;
+  border-left: 4px solid #D8CEB0;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.18s;
+}
+
+.motoboy-card:hover { box-shadow: 0 4px 14px rgba(26,22,16,0.08); }
+
+.motoboy-card.ativo   { border-left-color: #2E7D52; }
+.motoboy-card.inativo { border-left-color: #B5342A; opacity: 0.7; }
+
+.motoboy-info h3 {
+  margin: 0 0 4px;
+  color: #1A1610;
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+}
+
+.motoboy-info p { margin: 0; color: #9A8F72; font-size: 12px; }
+
+.motoboy-status-toggle { cursor: pointer; user-select: none; }
+
+.tag-ativo,
+.tag-inativo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.tag-ativo  { color: #2E7D52; }
+
+.motoboy-mensagem {
+  background: #FFF3CD;
+  color: #856404;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #FFEEBA;
+  font-size: 14px;
+}
+
+.editar-comissao {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.editar-comissao input {
+  width: 80px;
+  padding: 6px 8px;
+  border: 1px solid #D8CEB0;
+  border-radius: 4px;
+}
+
+.editar-comissao button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.editar-comissao button:first-of-type {
+  background: #2E7D52;
+  color: white;
+}
+
+.editar-comissao button:last-of-type {
+  background: #6c757d;
+  color: white;
+}
+
+.btn-editar-comissao {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  color: #CEAD5A;
+  font-size: 11px;
+  cursor: pointer;
+  margin-top: 4px;
+  padding: 4px 0;
+}
+
+.btn-editar-comissao:hover {
+  color: #B5983D;
+}
+
+/* Modal de Comissão */
+.modal-comissao-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-comissao {
+  background: #FDFBF6;
+  padding: 24px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+.modal-comissao h3 {
+  margin: 0 0 12px;
+  color: #1A1610;
+  font-family: 'Playfair Display', serif;
+}
+
+.modal-comissao p {
+  color: #6c6254;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.modal-comissao input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #D8CEB0;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+.modal-comissao-botoes {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.modal-comissao-botoes button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  border: none;
+}
+
+.modal-comissao-botoes button:first-child {
+  background: #E5E0D4;
+  color: #6c6254;
+}
+
+.modal-comissao-botoes .btn-confirmar {
+  background: #2E7D52;
+  color: white;
+}
+.tag-inativo { color: #B5342A; }

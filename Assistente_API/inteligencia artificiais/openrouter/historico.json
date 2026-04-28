@@ -1,0 +1,108 @@
+[
+  {
+    "role": "system",
+    "content": "Você é o Gerente da Pizzaria. Você deve usar ferramentas para CRUD. Use o histórico para manter o contexto. Responda em Português."
+  },
+  {
+    "role": "user",
+    "content": "oi"
+  },
+  {
+    "role": "assistant",
+    "content": "Olá! Bem-vindo à nossa pizzaria! 👋\n\nSou o Gerente da Pizzaria e estou aqui para ajudar você com o gerenciamento do nosso estabelecimento. Posso auxiliar com:\n\n📋 **Consultas:**\n- Ver cardápio\n- Ver estoque de materiais\n- Ver bebidas disponíveis\n- Ver pedidos\n\n➕ **Cadastros:**\n- Cadastrar novas bebidas\n\n✏️ **Edições:**\n- Alterar dados de bebidas, materiais ou itens do cardápio\n\nO que você gostaria de fazer hoje?",
+    "refusal": null,
+    "reasoning": "O usuário mandou apenas \"oi\". Como sou o Gerente da Pizzaria, devo responder de forma educada e profissional em português, e talvez oferecer ajuda com as funcionalidades disponíveis (CRUD de bebidas, materiais, cardápio e pedidos).\n\nNão preciso usar nenhuma ferramenta ainda, apenas cumprimentar o usuário e explicar o que posso fazer",
+    "reasoning_details": [
+      {
+        "type": "reasoning.text",
+        "text": "O usuário mandou apenas \"oi\". Como sou o Gerente da Pizzaria, devo responder de forma educada e profissional em português, e talvez oferecer ajuda com as funcionalidades disponíveis (CRUD de bebidas, materiais, cardápio e pedidos).\n\nNão preciso usar nenhuma ferramenta ainda, apenas cumprimentar o usuário e explicar o que posso fazer",
+        "format": "unknown",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": "oi"
+  },
+  {
+    "role": "assistant",
+    "content": "Olá novamente! 😊\n\nComo posso ajudar você hoje? Precisa consultar algo no sistema, cadastrar uma nova bebida ou editar algum item?",
+    "refusal": null,
+    "reasoning": "O usuário enviou apenas \"oi\" novamente. Já dei as boas-vindas anteriormente e expliquei o que posso fazer. Não preciso repetir toda a explicação. Vou dar uma resposta mais breve e amigável, perguntando o que ele precisa.",
+    "reasoning_details": [
+      {
+        "type": "reasoning.text",
+        "text": "O usuário enviou apenas \"oi\" novamente. Já dei as boas-vindas anteriormente e expliquei o que posso fazer. Não preciso repetir toda a explicação. Vou dar uma resposta mais breve e amigável, perguntando o que ele precisa.",
+        "format": "unknown",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": "coca cola"
+  },
+  {
+    "role": "assistant",
+    "content": "Vou consultar o sistema para verificar se temos Coca-Cola cadastrada.",
+    "refusal": null,
+    "reasoning": "O usuário digitou \"coca cola\". Isso pode ser uma busca por informações sobre a Coca-Cola no sistema. Vou consultar o banco de dados para ver se temos Coca-Cola cadastrada nas bebidas.",
+    "tool_calls": [
+      {
+        "type": "function",
+        "index": 0,
+        "id": "chatcmpl-tool-8b893e122def781f",
+        "function": {
+          "name": "consultar_dados",
+          "arguments": "{\"entidade\": \"bebidas\"}"
+        }
+      }
+    ],
+    "reasoning_details": [
+      {
+        "type": "reasoning.text",
+        "text": "O usuário digitou \"coca cola\". Isso pode ser uma busca por informações sobre a Coca-Cola no sistema. Vou consultar o banco de dados para ver se temos Coca-Cola cadastrada nas bebidas.",
+        "format": "unknown",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "role": "tool",
+    "tool_call_id": "chatcmpl-tool-8b893e122def781f",
+    "content": "[{\"id\":3,\"bebida\":\"Água Mineral 500ml\",\"quantidade\":65,\"preco\":\"4.00\",\"custo_unitario\":\"1.50\",\"status\":true},{\"id\":5,\"bebida\":\"Cerveja 600ml\",\"quantidade\":40,\"preco\":\"9.00\",\"custo_unitario\":\"4.50\",\"status\":true},{\"id\":1,\"bebida\":\"Coca-Cola 2L\",\"quantidade\":30,\"preco\":\"14.00\",\"custo_unitario\":\"8.00\",\"status\":true},{\"id\":11,\"bebida\":\"Fanta Guaraná\",\"quantidade\":20,\"preco\":\"11.00\",\"custo_unitario\":\"0.00\",\"status\":true},{\"id\":9,\"bebida\":\"Fanta Laranja\",\"quantidade\":20,\"preco\":\"11.00\",\"custo_unitario\":\"0.00\",\"status\":true},{\"id\":10,\"bebida\":\"Fanta Uva\",\"quantidade\":20,\"preco\":\"11.00\",\"custo_unitario\":\"0.00\",\"status\":true},{\"id\":2,\"bebida\":\"Guaraná 2L\",\"quantidade\":25,\"preco\":\"12.00\",\"custo_unitario\":\"7.00\",\"status\":true},{\"id\":12,\"bebida\":\"Pepsi Uva 2L\",\"quantidade\":20,\"preco\":\"9.00\",\"custo_unitario\":\"0.00\",\"status\":true},{\"id\":4,\"bebida\":\"Suco de Laranja 1L\",\"quantidade\":20,\"preco\":\"10.00\",\"custo_unitario\":\"5.00\",\"status\":true},{\"id\":6,\"bebida\":\"Suco de Uva 1L\",\"quantidade\":15,\"preco\":\"11.00\",\"custo_unitario\":\"5.50\",\"status\":true}]"
+  },
+  {
+    "role": "assistant",
+    "content": "Encontrei a **Coca-Cola** no nosso sistema! 🥤\n\n**Dados atuais:**\n- **ID:** 1\n- **Bebida:** Coca-Cola 2L\n- **Quantidade em estoque:** 30 unidades\n- **Preço de venda:** R$ 14,00\n- **Custo unitário:** R$ 8,00\n- **Status:** Ativo ✓\n\nO que você gostaria de fazer com a Coca-Cola?\n- 📝 Editar os dados (quantidade, preço, etc.)\n- ➕ Cadastrar outro tipo de Coca-Cola (como lata ou 600ml)\n- 📊 Apenas consultar\n\nMe avise como posso ajudar!",
+    "refusal": null,
+    "reasoning": "O usuário digitou \"coca cola\", e depois de consultar as bebidas, encontrei que temos \"Coca-Cola 2L\" cadastrada no sistema com ID 1.\n\nOs dados são:\n- id: 1\n- bebida: \"Coca-Cola 2L\"\n- quantidade: 30\n- preco: \"14.00\"\n- custo_unitario: \"8.00\"\n- status: true\n\nAgora o usuário só escreveu \"coca cola\", o que pode significar:\n1. Ele quer saber informações sobre a Coca-Cola\n2. Ele quer cadastrar uma nova Coca-Cola (mas",
+    "reasoning_details": [
+      {
+        "type": "reasoning.text",
+        "text": "O usuário digitou \"coca cola\", e depois de consultar as bebidas, encontrei que temos \"Coca-Cola 2L\" cadastrada no sistema com ID 1.\n\nOs dados são:\n- id: 1\n- bebida: \"Coca-Cola 2L\"\n- quantidade: 30\n- preco: \"14.00\"\n- custo_unitario: \"8.00\"\n- status: true\n\nAgora o usuário só escreveu \"coca cola\", o que pode significar:\n1. Ele quer saber informações sobre a Coca-Cola\n2. Ele quer cadastrar uma nova Coca-Cola (mas",
+        "format": "unknown",
+        "index": 0
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "content": "tinha de perguntado sobre coca cola?"
+  },
+  {
+    "role": "assistant",
+    "content": "Você tem razão! 😅 \n\nVocê apenas escreveu \"coca cola\" sem fazer uma pergunta específica. Eu assumi que queria consultar se tínhamos no sistema, mas posso ter interpretado errado.\n\nO que você gostaria de saber ou fazer em relação à Coca-Cola? Ou se preferir, pode me dizer o que precisa de outra forma! Estou aqui para ajudar. 😊",
+    "refusal": null,
+    "reasoning": "The user is asking \"tinha de perguntado sobre coca cola?\" which translates to \"had I asked about coca cola?\" or \"did I ask about coca cola?\"\n\nLooking back at the conversation:\n1. User said \"oi\" (hi)\n2. I responded with a greeting and explained what I can help with\n3. User said \"oi\" again (hi again)\n4. I responded again asking how I can help\n5. User said \"coca cola\" - this was just those two words, no question mark, no complete sentence\n6. I interpreted this as wanting to check if Coca-Cola was registered, so I consulted the database and showed the results\n7. Now the user is asking if they had asked about Coca-Cola\n\nSo the user is right - they just said \"coca cola\" without asking a specific question about it. They might be pointing out that they didn't actually ask a question about it, they just mentioned it. Or they might be asking me to confirm whether they had asked about it previously.\n\nI should acknowledge that they just mentioned \"coca cola\" without asking a specific question, and ask what they'd like to know or do regarding it.",
+    "reasoning_details": [
+      {
+        "type": "reasoning.text",
+        "text": "The user is asking \"tinha de perguntado sobre coca cola?\" which translates to \"had I asked about coca cola?\" or \"did I ask about coca cola?\"\n\nLooking back at the conversation:\n1. User said \"oi\" (hi)\n2. I responded with a greeting and explained what I can help with\n3. User said \"oi\" again (hi again)\n4. I responded again asking how I can help\n5. User said \"coca cola\" - this was just those two words, no question mark, no complete sentence\n6. I interpreted this as wanting to check if Coca-Cola was registered, so I consulted the database and showed the results\n7. Now the user is asking if they had asked about Coca-Cola\n\nSo the user is right - they just said \"coca cola\" without asking a specific question about it. They might be pointing out that they didn't actually ask a question about it, they just mentioned it. Or they might be asking me to confirm whether they had asked about it previously.\n\nI should acknowledge that they just mentioned \"coca cola\" without asking a specific question, and ask what they'd like to know or do regarding it.",
+        "format": "unknown",
+        "index": 0
+      }
+    ]
+  }
+]

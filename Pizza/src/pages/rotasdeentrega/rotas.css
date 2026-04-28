@@ -1,0 +1,172 @@
+/* =============================================
+   Página: Rotas  |  Tema: Cinza Escuro
+   ============================================= */
+
+.rotas-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 24px;
+  min-height: 100vh;
+  background-color: #1a1c20;
+  padding: 100px;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  color: #d4d6db;
+  box-sizing: border-box;
+}
+
+/* Coluna 1 — Lista de Rotas */
+.rotas-lista {
+  background: #23262d;
+  border: 1px solid #2e3138;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  height: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Coluna 2 — Formulário */
+.rotas-cadastro {
+  background: #23262d;
+  border: 1px solid #2e3138;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+  height: max-content;
+}
+
+.titulo-rota {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #3a3d45;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Formulário */
+.form-rota {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label-rota {
+  font-size: 13px;
+  font-weight: 600;
+  color: #9aa0ae;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.input-rota {
+  background: #292e38;
+  border: 1px solid #3a3d45;
+  border-radius: 8px;
+  padding: 12px 14px;
+  color: #e2e4e8;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+
+.input-rota:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+}
+
+.btn-rota-add {
+  margin-top: 10px;
+  background: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 3px 12px rgba(59, 130, 246, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-rota-add:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45);
+}
+
+/* Cards de Rota */
+.rota-card {
+  background: #1a1c20;
+  border: 1px solid #3a3d45;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.2s;
+}
+
+.rota-card:hover {
+  transform: translateX(4px);
+  border-color: #3b82f6;
+}
+
+.rota-info-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.rota-icon-wrapper {
+  background: #3b82f622;
+  color: #3b82f6;
+  padding: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.rota-nome {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.rota-valor {
+  font-size: 16px;
+  font-weight: 600;
+  color: #10b981; /* Verde para dinheiro */
+  background: #292e38;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+/* Scrollbar Customizada */
+.rotas-lista::-webkit-scrollbar {
+  width: 6px;
+}
+.rotas-lista::-webkit-scrollbar-thumb {
+  background: #4e535f;
+  border-radius: 3px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .rotas-principal {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+}

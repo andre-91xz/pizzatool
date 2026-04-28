@@ -1,0 +1,346 @@
+/* ═══════════════════════════════════════════════════
+   BEBIDAS — Cardápio de Bebidas
+═══════════════════════════════════════════════════ */
+
+.bebidas-principal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 32px 28px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  background: var(--bg);
+  font-family: var(--font-body);
+}
+
+.bebidas-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--gold);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.titulo-bebidas {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* Card de total */
+.bebidas-card-total {
+  background: var(--coal);
+  border-radius: 12px;
+  padding: 14px 22px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.card-total-icon {
+  background: rgba(46, 213, 115, 0.15);
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--success);
+}
+
+.card-total-info { display: flex; flex-direction: column; gap: 2px; }
+
+.card-total-info span {
+  color: var(--text-muted);
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.card-total-info strong {
+  color: var(--gold);
+  font-size: 22px;
+  font-weight: 800;
+}
+
+/* Container principal */
+.bebidas-container {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.bebidas-form-container {
+  background: var(--surface-2);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+}
+
+.bebidas-form-container h2 {
+  color: var(--text-muted);
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+}
+
+.bebidas-form {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+@media (max-width: 800px) {
+  .bebidas-form { grid-template-columns: 1fr; }
+}
+
+.form-group-bebida {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group-bebida label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-bebida {
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 11px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.2s;
+  width: 100%;
+}
+
+.input-bebida:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(206,173,90,0.15);
+}
+
+.btn-cadastrar-bebida {
+  background: var(--gold);
+  color: var(--coal);
+  border: none;
+  padding: 0 24px;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  height: 42px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.18s;
+}
+
+.btn-cadastrar-bebida:hover { 
+  background: var(--gold-hover); 
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md); 
+}
+
+/* Lista */
+.bebidas-lista h2 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.sem-bebidas {
+  color: var(--text-muted);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background: var(--surface-2);
+  border-radius: 12px;
+  border: 1.5px dashed var(--border);
+  font-style: italic;
+  font-size: 14px;
+}
+
+.bebidas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.bebida-card {
+  background: var(--surface-2);
+  border-radius: 12px;
+  border: 1.5px solid var(--border);
+  border-left: 4px solid var(--gold);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.bebida-card:hover {
+  border-left-color: var(--gold-hover);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.bebida-icone-wrapper {
+  background: var(--gold);
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--coal);
+}
+
+.bebida-info { flex: 1; min-width: 0; }
+
+.bebida-info h3 {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-size: 16px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bebida-detalhes { display: flex; flex-direction: column; gap: 4px; }
+
+.b-qtd {
+  color: var(--text-muted);
+  font-size: 11px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2px 10px;
+  border-radius: 99px;
+  width: fit-content;
+}
+
+.b-preco { color: var(--success); font-weight: 700; font-size: 14px; }
+
+/* Ações Hover */
+.bebida-acoes-hover {
+  position: absolute;
+  right: -50px;
+  top: 0;
+  bottom: 0;
+  background: var(--surface);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 10px;
+  transition: right 0.25s ease;
+}
+
+.bebida-card:hover .bebida-acoes-hover {
+  right: 0;
+}
+
+.btn-acao {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.18s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-acao.edit { color: var(--info); }
+.btn-acao.edit:hover { background: var(--info-bg); }
+
+.btn-acao.delete { color: var(--danger); }
+.btn-acao.delete:hover { background: var(--danger-bg); }
+
+/* Edit Mode */
+.bebida-edit-mode {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-bebida-edit {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 13px;
+  width: 100%;
+  outline: none;
+}
+
+.input-bebida-edit:focus { border-color: var(--gold); }
+
+.edit-row { display: flex; gap: 6px; }
+.input-bebida-edit.small { flex: 1; }
+
+.edit-acoes {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.btn-save, .btn-cancel {
+  flex: 1;
+  border: none;
+  border-radius: 6px;
+  padding: 7px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  text-transform: uppercase;
+}
+
+.btn-save { background: var(--gold); color: var(--coal); }
+.btn-cancel { background: var(--surface); color: var(--text-muted); border: 1px solid var(--border); }

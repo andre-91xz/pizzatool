@@ -1,0 +1,305 @@
+/* ═══════════════════════════════════════════════════
+   CARDÁPIO — Design Tradicional Minimalista
+   Sincronizado via Perfil
+   ═══════════════════════════════════════════════════ */
+
+.cd-wrapper {
+  padding: 40px;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+/* Barra de Ações do Topo */
+.cd-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.cd-titulo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0;
+}
+
+.cd-acoes {
+  display: flex;
+  gap: 15px;
+}
+
+.cd-acoes button {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid transparent;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Botão PDF */
+.btn-cd-pdf {
+  background: rgba(231, 76, 60, 0.1);
+  color: #e74c3c;
+  border-color: rgba(231, 76, 60, 0.2) !important;
+}
+
+.btn-cd-pdf:hover {
+  background: #e74c3c;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+}
+
+/* Botão PNG */
+.btn-cd-png {
+  background: rgba(52, 152, 219, 0.1);
+  color: #3498db;
+  border-color: rgba(52, 152, 219, 0.2) !important;
+}
+
+.btn-cd-png:hover {
+  background: #3498db;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Botão Imprimir */
+.btn-cd-imprimir {
+  background: rgba(206, 173, 90, 0.1);
+  color: var(--gold);
+  border-color: rgba(206, 173, 90, 0.2) !important;
+}
+
+.btn-cd-imprimir:hover {
+  background: var(--gold);
+  color: #1A1610;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(206, 173, 90, 0.3);
+}
+
+.cd-acoes button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+  transform: none !important;
+}
+
+/* Header sem imagens */
+.cd-header-simple {
+  text-align: center;
+  padding: 60px 20px;
+  background: #1A1610;
+  border-radius: 24px 24px 0 0;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(206, 173, 90, 0.2);
+}
+
+.cd-nome-pizzaria-main {
+  font-family: 'Playfair Display', serif;
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--gold);
+  margin: 0;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+
+.cd-divider-elegant {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.cd-divider-elegant .line {
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.cd-divider-elegant .dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+
+.cd-slogan-minimal {
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  letter-spacing: 6px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.cd-social-bar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 25px;
+  background: rgba(206, 173, 90, 0.05);
+  border-bottom: 1px solid rgba(206, 173, 90, 0.1);
+  font-family: 'Sora', sans-serif;
+  font-size: 14px;
+  color: var(--gold);
+}
+
+.cd-social-bar span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Layout das Colunas */
+.cd-menu-columns {
+  column-count: 2;
+  column-gap: 40px;
+  padding: 40px;
+  background: #F5F0E6; /* Fundo papel antigo */
+  border-radius: 0 0 24px 24px;
+}
+
+.cd-category-group {
+  break-inside: avoid;
+  margin-bottom: 40px;
+}
+
+.cd-category-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.cd-category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #1A1610;
+  margin: 0;
+}
+
+.cd-category-header .decoration {
+  flex: 1;
+  height: 2px;
+  background: #D4AF37;
+}
+
+.cd-size-block {
+  margin-bottom: 30px;
+}
+
+.cd-size-header {
+  margin-bottom: 15px;
+}
+
+.cd-size-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  color: #8B4513;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cd-menu-item {
+  margin-bottom: 20px;
+}
+
+.cd-item-main {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.cd-item-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #1A1610;
+}
+
+.cd-item-dots {
+  flex: 1;
+  border-bottom: 1px dotted #D4AF37;
+}
+
+.cd-item-price {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  color: #1A1610;
+}
+
+.cd-item-description {
+  font-family: 'Sora', sans-serif;
+  font-size: 13px;
+  color: #555;
+  margin: 5px 0 0;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* Rodapé */
+.cd-footer-traditional {
+  text-align: center;
+  padding: 60px 40px;
+  background: #F5F0E6;
+  border-radius: 0 0 24px 24px;
+  font-family: 'Playfair Display', serif;
+}
+
+.it-flag {
+  display: flex;
+  justify-content: center;
+  height: 4px;
+  width: 60px;
+  margin: 0 auto 20px;
+}
+
+.it-flag span { flex: 1; }
+.it-flag .green { background: #008C45; }
+.it-flag .white { background: #F4F5F0; }
+.it-flag .red { background: #CD212A; }
+
+.cd-footer-traditional p {
+  font-size: 24px;
+  font-weight: 900;
+  color: #1A1610;
+  margin: 0 0 10px;
+}
+
+.cd-footer-note {
+  font-family: 'Sora', sans-serif;
+  font-size: 11px;
+  color: #777;
+}
+
+/* Área de Impressão */
+@media print {
+  .cd-wrapper { padding: 0; }
+  .cd-topbar { display: none; }
+  .cd-print-area { border: none; }
+}
+
+@media (max-width: 900px) {
+  .cd-menu-columns { column-count: 1; }
+  .cd-nome-pizzaria-main { font-size: 36px; }
+}

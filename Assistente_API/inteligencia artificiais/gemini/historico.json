@@ -1,0 +1,127 @@
+[
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "tinha de perguntado sobre coca cola?"
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "functionCall": {
+          "name": "consultar_dados",
+          "args": {
+            "entidade": "bebidas"
+          }
+        },
+        "thoughtSignature": "CsYDAQw51se9vvfppq5hQHDlJ5Z85ZdxR+Fh/yPB/tMzUQbTeTJSGUJUnrbzmx0gCHy3Vv0T6JxsWinjebjfZLnVvj0Oab141knSpE/uWmZk2hzKgBPj60sIYQnVtsNwaoxcMxO/qKa4lClCyw8qp0d/fK9pzf5kKIfgMqY75J7jgPu3UD/rwvZUQCJ/o1BaWJ9HWJcQ5Y410s9fUG/uZAImGNpfInkGTDzU/8CyE1BPMd5+/MYuJZeHK/2nVChBSbrH5t14HWdJ6b1hjNdO4WACxf6uYiDtMycs13CIy5xyMV72J3BDDn+UfxkzodtZpd2UhcIFTICPMKKWBWWR2j77I+HQu5SY4ehNSGlvuT+F9xnP6q88mJ+ukiZKyQO35ozoSp+XsPzPeowN5nqUn/k9I+HcYO3WNkV4RxdyTWIa7d8xLM2WmBKFH7tWm2EPd2c9RQB2gcgtAnAUhKDIOO96F9wq633ncnDKqKAzIUbOJFuSZ2JleWV5cesysw98MLPTiq+r1rO2R0aPYJ4zyHMpUZno6PPsVoEmrnV8meMqIBqrx7BearsFW/FpbpT9NXdJDeN2AD6+Qj/oK9/WvaSL69a9ZgccYQ=="
+      }
+    ],
+    "role": "model"
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "functionResponse": {
+          "name": "consultar_dados",
+          "response": {
+            "content": [
+              {
+                "id": 3,
+                "bebida": "Água Mineral 500ml",
+                "quantidade": 65,
+                "preco": "4.00",
+                "custo_unitario": "1.50",
+                "status": true
+              },
+              {
+                "id": 5,
+                "bebida": "Cerveja 600ml",
+                "quantidade": 40,
+                "preco": "9.00",
+                "custo_unitario": "4.50",
+                "status": true
+              },
+              {
+                "id": 1,
+                "bebida": "Coca-Cola 2L",
+                "quantidade": 30,
+                "preco": "14.00",
+                "custo_unitario": "8.00",
+                "status": true
+              },
+              {
+                "id": 11,
+                "bebida": "Fanta Guaraná",
+                "quantidade": 20,
+                "preco": "11.00",
+                "custo_unitario": "0.00",
+                "status": true
+              },
+              {
+                "id": 9,
+                "bebida": "Fanta Laranja",
+                "quantidade": 20,
+                "preco": "11.00",
+                "custo_unitario": "0.00",
+                "status": true
+              },
+              {
+                "id": 10,
+                "bebida": "Fanta Uva",
+                "quantidade": 20,
+                "preco": "11.00",
+                "custo_unitario": "0.00",
+                "status": true
+              },
+              {
+                "id": 2,
+                "bebida": "Guaraná 2L",
+                "quantidade": 25,
+                "preco": "12.00",
+                "custo_unitario": "7.00",
+                "status": true
+              },
+              {
+                "id": 12,
+                "bebida": "Pepsi Uva 2L",
+                "quantidade": 20,
+                "preco": "9.00",
+                "custo_unitario": "0.00",
+                "status": true
+              },
+              {
+                "id": 4,
+                "bebida": "Suco de Laranja 1L",
+                "quantidade": 20,
+                "preco": "10.00",
+                "custo_unitario": "5.00",
+                "status": true
+              },
+              {
+                "id": 6,
+                "bebida": "Suco de Uva 1L",
+                "quantidade": 15,
+                "preco": "11.00",
+                "custo_unitario": "5.50",
+                "status": true
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  {
+    "parts": [
+      {
+        "text": "Sim, encontrei Coca-Cola 2L no estoque. Temos 30 unidades disponíveis, e o preço de venda é R$ 14,00.",
+        "thoughtSignature": "CpgCAQw51scGsUrAZw9YxZBF7Yhh46M8qp9VzR0FvERZwdxWQLZPKXShmWfMM9mlW+X9HMaeTxag3rgqCQrH1anSkb9Hbj/xNHhoIeibQ1TuAnqDY6Bplvbwx9IxGNfN4TYQiB9908tlfzJZvpmn6thhQdAgwczIOhtsRBJyy7CAoFb37zVlt9kVpc4JxuXDQH9hHRMRqOwYA6IO7a1MiETam4Cf3lsVkRkZnWRhSBU7C7EagoP8vitKTSWdGvS2eQUmGkGgo1ODRCTXy8L/rQaDGv28ezqay4iGl+3Y3LH2ETXSuxj8G66T0LZCU+lyKoKAAFNSJdnQOXDagOaJ/MxeivJ8ODMTYLTMSgCKzArthMDalsyq6Vx4fA=="
+      }
+    ],
+    "role": "model"
+  }
+]
